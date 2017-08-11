@@ -15,7 +15,8 @@ class OneNetObjController extends CommonController{
 
     private $api_key = 'HFHKQRPsbGYCvsHVylQdPocprBc=';
 
-    private $device_id = '9832447';
+//    private $device_id = '9832447';
+    private $device_id = '11098533';
 
     public function _initialize() {
         parent::_initialize();
@@ -26,6 +27,7 @@ class OneNetObjController extends CommonController{
 
     public function devicesInfo() {
         dump($this->onenet_obj->device($this->device_id));
+        dump($this->onenet_obj->datapoint_get($this->device_id, '步数,纬度,经度,实时时间'));
     }
 
     public function command() {
